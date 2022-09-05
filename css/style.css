@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  width: 100%;
+  max-width: 960px;
+  min-width: 600px;
+  margin: 0 auto;
+  background-color: #e0f3f1;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding: 12px;
+  color: #425c69;
+}
+
+.abouTarget {
+  background-color: #1997a5;
+  height: 2em;
+  color: #ffffff;
+}
+
+/*Блок лева+правая колонка*/
+.conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge {
+  width: 47%;
+  height: auto;
+  text-align: left;
+  margin: 1em 5em 5em 2em; /*вверх право низ лево*/
+}
+
+.badge ul {
+  padding-left: 0;
+}
+
+/*Фото в круглой рамке*/
+.photo {
+  width: 9em;
+  height: 9em;
+  padding: 0.1em;
+  border-radius: 7em;
+  border: 0.3em solid #1997a5;
+  text-align: center;
+}
+
+.info {
+  margin: 1em 3em 5em 2em;
+  text-align: left;
+}
+
+.contacts {
+  width: 12em;
+  height: 17em;
+  text-align: left;
+}
+
+.locationmap {
+  width: 12em;
+  height: 5em;
+  position: center;
+  padding-top: 1.2em;
+  padding-right: 0.3em;
+  text-align: left;
+}
+
+/* размер иконок*/
+.icon {
+  width: 2.5em;
+  height: 2.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.1em;
+}
+
+/*ссылки в блоке с лева поднимаются при наведении*/
+.social-link {
+  color: #425c69;
+  text-decoration: none;
+  border-bottom: 0.3em dashed #9d462b;
+  padding-bottom: 0.3em; /*отступ от текста вниз*/
+  padding: 0.1em;
+}
+
+.social-link:hover {
+  position: relative;
+  bottom: 1em;
+  color: #9d462b;
+}
+
+/*конец блока иконок с лева*/
+
+/*--аккордион--*/
+
+.accordion {
+  display: block;
+  font-size: inherit;
+  margin: 0px;
+  position: relative;
+}
+
+.accordion input {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+}
+
+.accordion__header {
+  display: inline-block;
+  border-bottom: 4px solid #1997a5;
+  color: #425c69; /*цвет шрифта хедера*/
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0px;
+  min-height: 65px;
+  position: relative;
+  z-index: 2;
+}
+.accordion__header:hover {
+  background-color: #1997a5; /*цвет хедера при наведении*/
+  color: #ffffff; /*цвет шрифта при наведении*/
+  bottom: 10px;
+}
+.accordion__header:hover:before,
+.accordion__header:hover:after {
+  background-color: white;
+}
+.accordion__header:before,
+.accordion__header:after {
+  /*background-color: #CFD8DC;*/
+  content: ; /*Место размещения кнопки плюс и минус*/
+  display: block;
+  position: absolute;
+  z-index: 3;
+}
+
+.chevron-right {
+  color: #9d462b;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.chevron-right i {
+  padding-left: auto;
+}
+
+.cross {
+  z-index: 9;
+  position: absolute;
+  color: #9d462b;
+  font-size: 36px;
+  padding-left: 91%;
+  cursor: pointer;
+}
+
+.accordion__header:before {
+  height: 2px;
+  margin-top: -1px;
+  top: 50%;
+  right: 20px;
+  width: 8px;
+}
+.accordion__header:after {
+  height: 8px;
+  margin-top: -4px;
+  top: 50%;
+  right: 23px;
+  width: 2px;
+}
+.accordion input:checked ~ .accordion__header {
+  border-color: #607d8b; /*обводка верхней части рамки хедера после того как мышку убрали остается как октивный*/
+  color: white; /*цвет шрифта остается темже*/
+}
+.accordion input:checked ~ .accordion__header:hover {
+  background-color: #607d8b;
+  border-color: #607d8b;
+  color: white;
+}
+.accordion input:checked ~ .accordion__header:before {
+  background-color: white;
+}
+.accordion input:checked ~ .accordion__header:after {
+  display: none;
+}
+
+.accordion:last-child input:checked ~ .accordion__header {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.accordion__content {
+  background-color: white;
+  border: 1px solid #607d8b;
+  border-width: 0px 1px;
+  display: none;
+  padding: 2em;
+}
+.accordion input:checked ~ .accordion__content {
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  left: 3em;
+  width: 63em;
+  border: 1px solid #607d8b;
+  border-radius: 4px;
+  z-index: 3;
+}
+.accordion:last-child .accordion__content {
+  border-bottom-width: 1px;
+  border-radius: 0px 0px 4px 4px;
+}
+.accordion__content h4 {
+  color: #425c69;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.accordion__content a {
+  color: #425c69; /*цвет ссссылок в аккордионе*/
+}
+
+/*Блок правая колонка раздел сертификатs*/
+
+.sertop {
+  /*контейнер summ sert1_2_3*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-up {
+  color: #9d462b;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sertbottom {
+  /*контейнер сертификата summ sert4_5_6*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconsert {
+  width: 5em;
+  height: 5em;
+  cursor: pointer;
+  padding-right: 9em;
+  padding-left: 5em;
+}
+
+.cross-sert {
+  z-index: 9;
+  position: relative;
+  color: #9d462b;
+  font-size: 36px;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.sert1 input {
+  /* спрятали кубик */
+  display: none;
+}
+
+.beetroot {
+  display: none;
+}
+
+.sert1 input:checked ~ .beetroot {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 17em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sert2 input {
+  display: none;
+}
+
+.goglads {
+  display: none;
+}
+
+.sert2 input:checked ~ .goglads {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 17em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sert3 input {
+  display: none;
+}
+
+.goglan {
+  display: none;
+}
+
+.sert3 input:checked ~ .goglan {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 17em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sert4 input {
+  display: none;
+}
+
+.gogldm {
+  display: none;
+}
+
+.sert4 input:checked ~ .gogldm {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 17em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sert5 input {
+  display: none;
+}
+
+.solearn {
+  display: none;
+}
+
+.sert5 input:checked ~ .solearn {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 17em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sert6 input {
+  display: none;
+}
+
+.tilda {
+  display: none;
+}
+
+.sert6 input:checked ~ .tilda {
+  transition-delay: 1s;
+  display: flex;
+  position: relative;
+  bottom: 7em;
+  width: 19em;
+  height: 23em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/*конец раздела сертификаты*/
+
+/*служебные кнопки*/
+
+/*кнопка download*/
+
+.download {
+  /*контейнер-где размешаются все иконки*/
+  width: 19em;
+  height: 5em;
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  position: absolute;
+  top: 2.5em;
+  left: 71em;
+  /*border-bottom: 5px solid #1997a5; /*рамка рабочая для отображения поля*/
+}
+
+.download img {
+  width: 3em;
+  height: 3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.download input {
+  /*спрятали кубик переключатель кнопки download*/
+  display: none;
+}
+
+.downlod_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+.cvru {
+  display: none;
+  position: absolute;
+}
+
+.cven {
+  display: none;
+  position: absolute;
+}
+
+.download input:checked ~ .cvru {
+  /*подвигаем из под кнопки share кнопку telegram*/
+  display: flex;
+  transform: translate(11em, 5em);
+}
+
+.download input:checked ~ .cven {
+  /*подвигаем из под кнопки share кнопку fb*/
+  display: flex;
+  transform: translate(11em, 11em);
+}
+
+/*кнопка download конец*/
+
+/*footer*/
+.solid {
+  border-top: 5px solid #1997a5;
+}
+.down p {
+  width: 40em;
+  text-align: justify;
+}
+.down img {
+  width: 1.5em;
+  height: 1.5em;
+  padding-left: 2em;
+}
+
+.vertical {
+  border-right: 0.3em solid #1997a5;
+  padding-right: 1em;
+  padding-left: 2em;
+}
